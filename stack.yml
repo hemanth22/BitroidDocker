@@ -1,6 +1,13 @@
-version: '1'
+version: "1"
 services:
     app:
         image: bitroid/bitroiddocker:latest
         ports:
             - "8080:8080"
+        deploy:
+            replicas: 1
+            update_config:
+                 parallelism: 2
+                 delay: 10s
+        restart_policy:
+            condition: on-failure
