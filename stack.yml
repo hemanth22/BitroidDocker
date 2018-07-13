@@ -1,0 +1,6 @@
+version: '1'
+services:
+    app:
+        image: bitroid/bitroiddocker:latest
+        ports:
+            - "8080:8080"
