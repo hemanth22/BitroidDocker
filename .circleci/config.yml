@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: centos:latest
+    steps:
+      - checkout
+      - run: echo "Initializing build with docker stack
+      - run: docker stack deploy -c stack.yml bitroid
+  
+  test:
+    docker:
+      - image: centos:latest
+    steps:
+      - checkout
+      - run:
+          name: Testing build
+          command: curl localhost
+      
+  deploy:
+   dockerhub:
+     branch: master
+     commands:
+      - $HUB_DOCKER_TRIGGER
+      
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
