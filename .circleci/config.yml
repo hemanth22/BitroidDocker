@@ -1,27 +1,23 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
-      - image: centos:latest
+      - image: ubuntu:14.04
     steps:
       - checkout
       - run: echo "Initializing build with docker stack
       - run: docker stack deploy -c stack.yml bitroid
-  
-  test:
-    docker:
-      - image: centos:latest
-    steps:
-      - checkout
       - run:
           name: Testing build
           command: curl localhost
-      
+  
   deploy:
-   dockerhub:
-     branch: master
-     commands:
-      - $HUB_DOCKER_TRIGGER
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            - $HUB_DOCKER_TRIGGER
       
 workflows:
   version: 2
@@ -31,6 +27,3 @@ workflows:
       - deploy:
           requires:
             - test
-          filters:
-            branches:
-              only: master
