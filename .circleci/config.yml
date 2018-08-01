@@ -1,8 +1,8 @@
 version: 2
 jobs:
   test:
-    docker:
-      - image: circleci/python:3.7
+    machine:
+      - service: docker
     steps:
       - checkout
       - run: echo "Initializing build with docker stack"
