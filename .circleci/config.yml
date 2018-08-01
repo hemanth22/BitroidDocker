@@ -19,7 +19,7 @@ jobs:
       - run: echo "Initializing build with docker stack"
       - run: docker swarm init
       - run: docker stack deploy -c stackfile.yml bitroid
-      - run: curl localhost
+      - run: curl localhost:8080
   
   deploy:
     machine:
