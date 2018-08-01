@@ -30,8 +30,7 @@ jobs:
       - checkout
       - run:
           name: Trigger build in docker hub.
-          command: |
-            - $HUB_DOCKER_TRIGGER
+          command: $HUB_DOCKER_TRIGGER
       
 workflows:
   version: 2
