@@ -7,9 +7,7 @@ jobs:
       - checkout
       - run: echo "Initializing build with docker stack
       - run: docker stack deploy -c stack.yml bitroid
-      - run:
-          name: Testing build
-          command: curl localhost
+      - run: curl localhost
   
   deploy:
     machine:
