@@ -3,8 +3,8 @@ jobs:
   test:
     working_directory: /app
     docker:
-      - image:18.06.0-ce-git
-      #- image: docker:17.05.0-ce-git
+      #- image:18.06.0-ce-git
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
