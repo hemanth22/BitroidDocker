@@ -18,7 +18,7 @@ jobs:
               awscli==1.11.76
       - run: echo "Initializing build with docker stack"
       - run: docker swarm init
-      - run: docker stack deploy -c stack.yml bitroid
+      - run: docker stack deploy -c stackfile.yml bitroid
       - run: curl localhost
   
   deploy:
