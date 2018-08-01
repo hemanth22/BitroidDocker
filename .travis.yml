@@ -14,11 +14,12 @@ script:
 # Run container detached
   - docker swarm init
   - docker stack deploy -c stackfile.yml bitroid
-  - sleep 60
+  - sleep 90
   - docker service ps bitroid_app
   - docker service ls
   - echo "Listing files"
   - ls -la
+  - wget -O- localhost:8080
 
   
 notifications:
