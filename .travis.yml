@@ -1,1 +1,24 @@
+language: bash
 
+env:
+  - container_id=${container_id:-$timestamp}
+ 
+services:
+  - docker
+
+script:
+#create a random file to store the container
+  - export container_id=$(date +%s)
+  - export cleanup=false
+
+# Run container detached
+  - docker stack deploy -c stackfile.yml bitroid
+  - docker swarm init
+  - docker service ls
+  - echo "Listing files"
+  - ls -la
+  
+notifications:
+ slack:
+   rooms:
+     - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#mygitrepos
