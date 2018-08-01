@@ -18,6 +18,7 @@ script:
   - docker service ls
   - echo "Listing files"
   - ls -la
+  - wget -O- localhost:8080
   
 notifications:
  slack:
