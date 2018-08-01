@@ -21,6 +21,8 @@ jobs:
       - run: echo "Initializing build with docker stack"
       - run: docker swarm init
       - run: docker stack deploy -c stackfile.yml bitroid
+      - run: sleep 60
+      - run: docker service ps bitroid_app
       - run: docker service ls
       - run: docker ps -a
   
