@@ -21,7 +21,7 @@ jobs:
       - run: echo "Initializing build with docker stack"
       - run: docker swarm init
       - run: docker stack deploy -c stackfile.yml bitroid
-      - run: wget -O- localhost:8080
+      - run: docker service ls
   
   deploy:
     machine:
