@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7
     steps:
       - checkout
-      - run: echo "Initializing build with docker stack
+      - run: echo "Initializing build with docker stack"
       - run: docker stack deploy -c stack.yml bitroid
       - run: curl localhost
   
