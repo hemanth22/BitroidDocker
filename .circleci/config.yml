@@ -1,27 +1,13 @@
 version: 2
 jobs:
   test:
-    working_directory: /app
-    docker:
-      #- image:18.06.0-ce-git
-      - image: docker:17.05.0-ce-git
+    machine:
+      - service: docker
     steps:
       - checkout
-      - setup_remote_docker
-      - run:
-          name: Install dependencies
-          command: |
-            apk add --no-cache \
-              py-pip=9.0.0-r1
-            apk --no-cache add curl
-            pip install wget
-            pip install \
-              docker-compose==1.12.0 \
-              awscli==1.11.76
       - run: echo "Initializing build with docker stack"
-      - run: docker swarm init
-      - run: docker stack deploy -c stackfile.yml bitroid
-      - run: docker service ls
+      - run: docker stack deploy -c stack.yml bitroid
+      - run: curl localhost
   
   deploy:
     machine:
@@ -29,8 +15,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Trigger build in docker hub.
-          command: $HUB_DOCKER_TRIGGER
+          name: Deploy Master to Heroku
+          command: |
+            - $HUB_DOCKER_TRIGGER
       
 workflows:
   version: 2
