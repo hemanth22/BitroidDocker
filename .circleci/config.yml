@@ -12,6 +12,8 @@ jobs:
           command: curl localhost
   
   deploy:
+    machine:
+      enabled: true
     steps:
       - checkout
       - run:
