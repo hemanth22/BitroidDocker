@@ -14,7 +14,7 @@ script:
 # Run container detached
   - docker swarm init
   - docker stack deploy -c stackfile.yml bitroid
-
+  - docker service ps bitroid_app
   - docker service ls
   - echo "Listing files"
   - ls -la
