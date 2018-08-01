@@ -12,8 +12,9 @@ script:
   - export cleanup=false
 
 # Run container detached
-  - docker stack deploy -c stackfile.yml bitroid
   - docker swarm init
+  - docker stack deploy -c stackfile.yml bitroid
+
   - docker service ls
   - echo "Listing files"
   - ls -la
