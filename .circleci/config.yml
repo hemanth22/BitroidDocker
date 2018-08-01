@@ -1,6 +1,7 @@
 version: 2
 jobs:
   test:
+
     machine:
       - service: docker
     steps:
@@ -8,6 +9,7 @@ jobs:
       - run: echo "Initializing build with docker stack"
       - run: docker stack deploy -c stack.yml bitroid
       - run: curl localhost
+
   
   deploy:
     machine:
@@ -15,9 +17,11 @@ jobs:
     steps:
       - checkout
       - run:
+
           name: Deploy Master to Heroku
           command: |
             - $HUB_DOCKER_TRIGGER
+
       
 workflows:
   version: 2
