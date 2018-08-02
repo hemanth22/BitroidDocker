@@ -5,23 +5,29 @@ env:
  
 services:
   - docker
-
-script:
-#create a random file to store the container
-  - export container_id=$(date +%s)
-  - export cleanup=false
-
-# Run container detached
-  - docker swarm init
-  - docker stack deploy -c stackfile.yml bitroid
-  - sleep 90
-  - docker service ps bitroid_app
-  - docker service ls
-  - echo "Listing files"
-  - ls -la
-  - wget -O- localhost:8080
-
   
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - export container_id=$(date +%s)
+        - export cleanup=false
+        - docker swarm init
+        - docker stack deploy -c stackfile.yml bitroid
+        - sleep 90
+        - docker service ps bitroid_app
+        - docker service ls
+        - echo "Listing files"
+        - ls -la
+        - wget -O- localhost:8080
+    
+    - stage: deploy
+      script: $DOCKER_HUB_TRIGGER
+      
 notifications:
  slack:
    rooms:
