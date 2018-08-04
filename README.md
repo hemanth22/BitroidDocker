@@ -10,6 +10,6 @@ master|[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abcb73b6afb54
 
 # Production task with DevOps flow.
 
-Repository | Test | Trigger | Build and Deploy
+Repository (store) | Test | Trigger | Build and Deploy
 ---|---|---|---
 [![github logo](github.png)](https://github.com/hemanth22)|[![Circle CI logo](CircleCI.png)](https://circleci.com)|[![Webhooks logo](webhook.png)](https://circleci.com)|[![Docker logo](dockerhub.png)](https://hub.docker.com)
