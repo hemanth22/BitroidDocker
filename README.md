@@ -9,4 +9,9 @@ master|[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abcb73b6afb54
 
 Test Production task with DevOps mode.
 
----|---|---
+[![Circle CI logo](CircleCI.png)](https://circleci.com)
+
+[![Webhooks logo](webhook.png)](https://circleci.com)
+
+[![Docker logo](dockerhub.png)](https://hub.docker.com/)
+
