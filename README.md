@@ -8,7 +8,7 @@ master|[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abcb73b6afb54
 
 
 
-# Production task with DevOps flow.
+# Production deployment task with DevOps flow.
 
 Repository (store) | Test | Trigger | Build and Deploy
 ---|---|---|---
