@@ -2,6 +2,6 @@ version: "3.2"
 
 services:
     app:
-        image: bitroid/bitroiddocker:latest
+        image: bitroid/bitroiddocker:Dev
         ports:
             - "8080:80"
