@@ -23,6 +23,8 @@ jobs:
       - run: docker stack deploy -c stackfile.yml bitroid
       - run: sleep 90
       - run: docker service ps bitroid_app
+      - run: docker stack ps bitroid
+      - run: docker stack ls
       - run: docker service ls
       - run: docker ps -a
   
