@@ -28,7 +28,7 @@ jobs:
     
     - stage: deploy
       script:
-        - hub_docker.sh
+        - ./hub_docker.sh
       
 notifications:
  slack:
