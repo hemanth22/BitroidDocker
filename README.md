@@ -13,3 +13,11 @@ master|[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abcb73b6afb54
 Repository (store) | Test | Trigger | Build and Deploy
 ---|---|---|---
 [![github logo](github.png)](https://github.com/hemanth22)|[![Circle CI logo](CircleCI.png)](https://circleci.com)|[![Webhooks logo](webhook.png)](https://circleci.com)|[![Docker logo](dockerhub.png)](https://hub.docker.com)
+
+
+# (OR)
+
+
+Repository (store) | Test | Trigger | Build and Deploy
+---|---|---|---
+[![github logo](github.png)](https://github.com/hemanth22)|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Webhooks logo](webhook.png)](https://circleci.com)|[![Docker logo](dockerhub.png)](https://hub.docker.com)
