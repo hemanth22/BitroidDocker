@@ -21,7 +21,7 @@ jobs:
         - docker swarm init
         - docker stack deploy -c stacks.yml bitroid
         - sleep 90
-        - docker service ps bitroid
+        - docker service ps bitroid_app
         - docker service ls
         - echo "Listing files"
         - ls -la
