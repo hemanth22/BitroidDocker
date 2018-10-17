@@ -1,0 +1,7 @@
+version: '3.2'
+
+services:
+    app:
+        image: bitroiddocker_web:latest
+        ports:
+            - "8080:80"

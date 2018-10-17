@@ -17,10 +17,11 @@ jobs:
       script:
         - export container_id=$(date +%s)
         - export cleanup=false
+        - docker-compose build
         - docker swarm init
-        - docker stack deploy -c stackfile.yml bitroid
+        - docker stack deploy -c stacks.yml bitroid
         - sleep 90
-        - docker service ps bitroid_app
+        - docker service ps bitroid
         - docker service ls
         - echo "Listing files"
         - ls -la
