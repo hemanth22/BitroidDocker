@@ -11,11 +11,13 @@ action "Test on Travis CI" {
 }
 
 action "Docker Login" {
+  needs = "Test on Travis CI"
   uses = "actions/docker/login@master"
   secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
 }
 
 action "build" {
+  needs = "Docker Login"
   uses = "actions/docker/cli@master"
   args = "build -t user/repo ."
 }
